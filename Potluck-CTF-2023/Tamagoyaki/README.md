@@ -2,7 +2,10 @@ Tamagoyaki
 =
 
 Written for Potluck CTF 2023, 37C3.
+
 By UDP - Blue Water / Water Paddler
+
+Thank you to my team mate @sshckk for play-testing and giving feedback on the chal.
 
 ```
 $ checksec ./chal
