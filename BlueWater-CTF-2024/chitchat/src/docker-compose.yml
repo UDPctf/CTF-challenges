@@ -1,0 +1,27 @@
+services:
+  server:
+    build:
+      context: ./server
+    ports:
+      - "1337:1337"
+    stop_grace_period: "0"
+    environment:
+      PORT: &port 1337
+    networks:
+      - my-network
+
+  client:
+    build:
+      context: ./client
+    stop_grace_period: "0"
+    environment:
+      GLIBC_TUNABLES: glibc.mem.tagging=1
+      PORT: *port
+    networks:
+      - my-network
+    depends_on:
+      - server
+
+networks:
+  my-network:
+    driver: bridge
